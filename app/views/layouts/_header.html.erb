@@ -10,23 +10,27 @@
           <% if user_signed_in? %>
             <li>
                <!-- ログイン後のHomeリンクは未実装です。自分で調べて実装してみましょう -->
-               <i class="fa-solid fa-house"></i>
-               <%= link_to "Home", user_path(current_user) %>
+               <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
+                <i class="fas fa-home"></i> Home
+               <% end %>
             </li>
             <li>
                <!-- ログイン後のUsersリンクは未実装です。自分で調べて実装してみましょう -->
-               <i class="fa-solid fa-users"></i>
-               <%= link_to "Users", users_path %>
+              <%=  link_to users_path,class: 'nav-link text-light' do %>
+               <i class="fas fa-users"></i> Users
+              <% end %>
             </li>
             <li>
               <!-- ログイン後のBooksリンクは未実装です。自分で調べて実装してみましょう -->
-              <i class="fa-solid fa-book-open"></i>
-              <%= link_to "Books", books_path %>
+              <%=  link_to books_path ,class: 'nav-link text-light' do %>
+                <i class="fas fa-book-open"></i> Books
+              <% end %>
             </li>
             <li>
                <!-- ログイン後のLog outリンクは未実装です。自分で調べて実装してみましょう -->
-               <i class="fa-solid fa-right-from-bracket"></i>
-               <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+              <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do %>
+                <i class="fas fa-sign-out-alt"></i> Log out
+              <% end %>
             </li>
           <% else %>
             <li>
